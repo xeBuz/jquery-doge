@@ -1,16 +1,15 @@
 jQuery Doge
 ===========
+![alt text][wow]
 
 Such jQuery Pluging
 ------
-![alt text][logo]
-
-[wow]: http://i.imgur.com/d9YuYwo.png "SuchDoge"
 
 
 Usage
 ------
- ```javascript
+ ```html
+ 
 <script>
 $(document).ready( function() {
     // Create an array with some words
@@ -18,4 +17,6 @@ $(document).ready( function() {
     $('body').doge(list);
 });
 </script>
+
  ```
+[wow]: http://i.imgur.com/d9YuYwo.png "wow"
