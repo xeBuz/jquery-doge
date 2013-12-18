@@ -87,6 +87,7 @@
                 "font-family": "Comic Sans MS",
                 "z-index": "10001",
                 "text-shadow": "-1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000",
+                "text-transform": "lowercase",
             }
             return style;
         },

@@ -120,9 +120,9 @@ p {
 }
 
 #leftcolumn {
-    background: #33CCFF;
+    background: #B2B2B2;
     border-radius: 10px;
-    border: 1px solid #1fb8eb;
+    border: 1px solid #B2B2B2;
     margin: 5px;
 }
 
@@ -133,9 +133,9 @@ p {
 }
 
 #rightcolumn {
-    background: #CC33FF;
+    background: #B2B2B2;
     border-radius: 10px;
-    border: 1px solid #b81feb;
+    border: 1px solid #B2B2B2;
     margin: 5px;
 }
 
