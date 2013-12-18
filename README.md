@@ -5,7 +5,7 @@ Such jQuery Pluging
 ------
 ![alt text][logo]
 
-[wow]: https://raw.github.com/xeBuz/jquery-doge/master/doge.png "SuchDoge"
+[wow]: http://i.imgur.com/d9YuYwo.png "SuchDoge"
 
 
 Usage
