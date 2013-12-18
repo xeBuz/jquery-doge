@@ -2,7 +2,7 @@ jQuery Doge
 ===========
 ![alt text][wow]
 
-Such jQuery Pluging
+Such jQuery Plugin
 ------
 
 
