@@ -56,8 +56,9 @@
             
             $("body").append(word);
             $("#dogeWord"+id).css(style);
-            $("#dogeWord"+id).fadeIn("slow").delay( 1200 ).fadeOut("slow");     
-
+            $("#dogeWord"+id).fadeIn("slow").delay( 1200 ).fadeOut(300, function(){
+				$(this).remove();
+			});
             return true; 
         },
 
