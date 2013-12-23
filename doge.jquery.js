@@ -7,14 +7,16 @@
  * ----------------------------------------------------------------------------
  */
 
+
 (function($) {
 
-    function DogePlugin(wordlist, options) {
+    function DogePlugin(options) {
+        this.options = $.extend({}, $.fn.doge.defaults, options);
+
         // Default wordlist 
         this.list = ["wow", "so doge", "such page", "very cool", "wow"];
-        this.list = this.list.concat(wordlist);
+        this.list = this.list.concat( this.options.wordList );
         
-        this.options = $.extend({}, $.fn.doge.defaults, options);
         this.init();
     }
 
@@ -25,7 +27,7 @@
                 this._suchDoge();    
             }
             var t = this;
-            soTiming = setInterval(function(){t._manyWords();}, 1000);
+            soTiming = setInterval(function(){t._manyWords();}, this.options.textRespawn);
             
         },
 
@@ -36,8 +38,8 @@
 
         _suchDoge: function() {
             // Append image to the body tag
-            $('body').append('<img id="dogeImg" src="doge.png">');
-            
+            $('body').append('<img id="dogeImg" src="'+ this.options.dogeImage +'">');
+              
             // Set correct position
             $("#dogeImg").css({
                 "position": "fixed", 
@@ -56,15 +58,15 @@
             
             $("body").append(word);
             $("#dogeWord"+id).css(style);
-            $("#dogeWord"+id).fadeIn("slow").delay( 1200 ).fadeOut(300, function(){
+            $("#dogeWord"+id).fadeIn("slow").delay( this.options.textDuration ).fadeOut(300, function(){
 				$(this).remove();
 			});
             return true; 
         },
 
         _randomColor: function() {
-            var colors = ["red", "green", "orange", "violet", "aqua", "yellow", "slateblue", "purple", "pink", "lime", "fuchsia", "gold", "indigo"];
-            return colors[Math.floor(Math.random() * colors.length)];
+            var colours = this.options.colours;
+            return colours[Math.floor(Math.random() * colours.length)];
         },
 
         _randomWord: function() {
@@ -83,33 +85,37 @@
                 "color": this._randomColor(), 
                 "top":  h,
                 "right": w, 
-                "font-size": "2em",
+                "font-size":  this.options.fontSize, 
                 "fon-weight": "bold",
                 "font-family": "Comic Sans MS",
                 "z-index": "10001",
-                "text-shadow": "-1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000",
                 "text-transform": "lowercase",
+                "text-shadow": "none",
             }
+
+            if (this.options.fontBorder ) {
+                style["text-shadow"] = "-1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000";
+            }
+
             return style;
         },
     };
 
     // Start the plugin
-    $.fn.doge = function(wordlist, options ) {
-        this.w = wordlist;
-        doge = new DogePlugin(wordlist, options);
+    $.fn.doge = function( options ) {
+        doge = new DogePlugin(options);
     }
 
-    // Future parametrization
+    // Parametrization
     $.fn.doge.defaults = {
+        wordList : [],
         showDoge : true,
-        //font-size
-        //doge-image
-        //doge-size
-        //colors
-        //font-css
-        //delay-each-text
-        //
+        fontSize : "2em",
+        fontBorder: true,
+        dogeImage : "doge.png",
+        colours : ["red", "green", "orange", "violet", "aqua", "yellow", "slateblue", "purple", "pink", "lime", "fuchsia", "gold", "indigo"],
+        textDuration: 1200,
+        textRespawn: 1000,
     };   
 
 }(jQuery));
