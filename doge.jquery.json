@@ -1,0 +1,30 @@
+{
+	"name": "doge",
+	"title": "jQuery Doge",
+	"description": "jQuery plugin for display text like doge meme",
+	"keywords": [
+		"doge",
+		"wow", 
+		"meme",
+		"fun"
+	],
+	"version": "1.0.1",
+	"author": {
+		"name": "´Jesús Roldán",
+		"email": "jesus.roldan@gmail.com",
+		"url": "http://blog.jesusroldan.com"
+	},
+	"licenses": [
+		{
+			"type": "Beerware",
+			"url": "http://search.cpan.org/~dgl/Software-License-Beerware-0.1/lib/Software/License/Beerware.pm"
+		}
+	],
+	"bugs": "https://github.com/xeBuz/jquery-doge/issues",
+	"homepage": "https://github.com/xeBuz/jquery-doge",
+	"docs": "https://github.com/xeBuz/jquery-doge",
+	"download": "https://github.com/xeBuz/jquery-doge/archive/master.zip",
+	"dependencies": {
+		"jquery": ">=1.5"
+	}
+}
