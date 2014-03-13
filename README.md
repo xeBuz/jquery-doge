@@ -43,7 +43,7 @@ $(document).ready( function() {
  
 Demo
 -----
-[Example page](http://jesusroldan.com/doge/demo.html)
+[Example page](http://www.jesusroldan.com/#doge)
 
 
 [wow]: http://i.imgur.com/d9YuYwo.png "wow"
